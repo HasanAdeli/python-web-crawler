@@ -3,6 +3,7 @@ from time import sleep
 from urllib.parse import urlparse
 from extractor import url_extractor
 from validator import get_valid_urls
+from separator import url_separator
 
 
 class WebCrawler:
@@ -42,7 +43,7 @@ class WebCrawler:
 
     @staticmethod
     def separate_urls(urls: dict) -> dict:
-        pass
+        return url_separator(urls)
 
     def save_all_urls(self, urls: dict) -> None:
         self.save_urls(self.urls, urls['Urls'])
