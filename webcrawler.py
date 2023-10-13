@@ -1,6 +1,7 @@
 import requests
 from time import sleep
 from urllib.parse import urlparse
+from extractor import url_extractor
 
 
 class WebCrawler:
@@ -32,7 +33,7 @@ class WebCrawler:
 
     @staticmethod
     def extract_all_urls(base_url: str, response: requests) -> dict:
-        pass
+        return url_extractor(base_url, response)
 
     @staticmethod
     def get_valid_urls(base_url: str, urls: dict) -> dict:
